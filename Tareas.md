@@ -8,3 +8,4 @@
 
 - [Tarea 1: Elección de Conjunto de Datos](https://colab.research.google.com/drive/1iCh89eNwcot7C-FQ1DPQEIR_hgyccvk4#scrollTo=r6ZXIZDA9eXz)
 - [Tarea 2: Preprocesamiento de datos](https://colab.research.google.com/drive/1xzznJAamFd5Gch75WEvoLQ0UPNea0gA5#scrollTo=i6COOeWpyxpi)
+- [Tarea 3: Estadistica de los datos ](https://colab.research.google.com/drive/1MK0d_HXsXhg2erh5-FoeiOp0wnrgXKkT?usp=sharing)
