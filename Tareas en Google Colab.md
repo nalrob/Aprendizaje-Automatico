@@ -4,7 +4,7 @@
 
 ### Maestria en Ciencia de Datos
 
-### Aprendizaje Automático 
+### Materia: Aprendizaje Automático 
 
 Estas ligas te llevan al código de Google Colab de cada tarea:
 
