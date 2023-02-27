@@ -13,4 +13,4 @@ Estas ligas te llevan al código de Google Colab de cada tarea:
 - [Tarea 3: Estadistica de los datos ](https://colab.research.google.com/drive/1MK0d_HXsXhg2erh5-FoeiOp0wnrgXKkT?usp=sharing)
 - [Tarea 4: Selección de caracteristicas](https://colab.research.google.com/drive/1tHiHd5jPOaBfRLD3iOyRu5-y33TaceDP#scrollTo=4HEkWmGBImZv)
 - [Tarea 5: No supervisado](https://colab.research.google.com/drive/1M9xkqeTkwx0mpqAh0ytrQwe3lZz-QZ6W#scrollTo=dRXmWoaz3UQw)
-- [Tarea 6: Supervisado](https://colab.research.google.com/drive/1LyU6mhNDycu_hhKuzHojfrgIuYD68DmK)
+- [Tarea 6: Supervisado](https://colab.research.google.com/drive/10JTmmg7u3Hyx2i2BfxuxGZMwrLfeKK1c#scrollTo=x8sXNJe4Tsux)
