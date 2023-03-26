@@ -1,0 +1,473 @@
+% Template for CRC journal article
+
+%-----------------------------------------------------------------------------------
+
+%-----------------------------------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% Important note on usage                  %%
+%% -----------------------                  %%
+%% This file must be compiled with PDFLaTeX %%
+%% Using standard LaTeX will not work!      %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% The '5p' and 'times' class options of elsarticle are used
+\documentclass[5p,times,authoryear]{sciarticle}
+
+%% The `crc' package must be called to make the CRC functionality available
+%% crc_RIAI es el paquete ecrc para la revista RIAI
+\usepackage{crc_SCI}
+
+%% The crc package defines commands needed for running heads and logos.
+%% For running heads, you can set the journal name, the volume, the starting page and the authors
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Añadido por Secretaría RIAI
+\usepackage[spanish]{babel}     % Idioma
+\addto\captionsspanish{%
+\def\tablename{Tabla}%
+}
+\usepackage[utf8]{inputenc}     % Lengua latina
+\usepackage{amsmath}            % Para las referencias a ecuaciones con \eqref
+\usepackage{epstopdf}           % Para poder insertar figuras .eps al compilar con PDFLATEX
+\usepackage{flushend}           % Para igualar las columnas de la última página
+%\usepackage{hyperref}          % Para hipervínculos dentro del PDF
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%% set the starting page if not 1
+\firstpage{1}
+
+%% Give the name of the journal
+\journalname{Predicción de quema de calorias durante el ejercicio}
+
+%% Give the author list to appear in the running head
+%% Example \runauth{C.V. Radhakrishnan et al.}
+\runauth{Robledo, N.}
+
+%% The choice of journal logo is determined by the \jid and \jnltitlelogo commands.
+%% A user-supplied logo with the name <\jid>logo.pdf will be inserted if present.
+%% e.g. if \jid{yspmi} the system will look for a file yspmilogo.pdf
+%% Otherwise the content of \jnltitlelogo will be set between horizontal lines as a default logo
+
+%% Give the abbreviation of the Journal. Contast the Publisher if in doubt what this is.
+\jid{SCI}
+
+%% Give a short journal name for the dummy logo (if needed)
+\jnltitlelogo{}
+
+%% Hereafter the template follows `elsarticle'.
+%% For more details see the existing template files elsarticle-template-harv.tex and elsarticle-template-num.tex.
+
+%% The conventions of elsarticle-template-num.tex should be followed (included below)
+%% If using BibTeX, use the style file elsarticle-num.bst
+
+%% End of ecrc-specific commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers after \end{frontmatter}.
+%% \usepackage{lineno}
+
+%% natbib.sty is loaded by default. However, natbib options can be
+%% provided with \biboptions{...} command. Following options are
+%% valid:
+
+%%   round  -  round parentheses are used (default)
+%%   square -  square brackets are used   [option]
+%%   curly  -  curly braces are used      {option}
+%%   angle  -  angle brackets are used    <option>
+%%   semicolon  -  multiple citations separated by semi-colon
+%%   colon  - same as semicolon, an earlier confusion
+%%   comma  -  separated by comma
+%%   numbers-  selects numerical citations
+%%   super  -  numerical citations as superscripts
+%%   sort   -  sorts multiple citations according to order in ref. list
+%%   sort&compress   -  like sort, but also compresses numerical citations
+%%   compress - compresses without sorting
+%%
+%% \biboptions{comma,round}
+
+% \biboptions{}
+
+% if you have landscape tables
+\usepackage[figuresright]{rotating}
+
+% put your own definitions here:
+%   \newcommand{\cZ}{\cal{Z}}
+%   \newtheorem{def}{Definition}[section]
+%   ...
+
+% add words to TeX's hyphenation exception list
+%\hyphenation{author another created financial paper re-commend-ed Post-Script}
+
+% para poder introducir varias figuras que ocupen el ancho de las dos columnas.
+\usepackage{subfigure}
+\usepackage{float} % JVS
+\usepackage{multicol} % JVS
+\usepackage[most]{tcolorbox}
+
+
+% declarations for front matter
+
+\begin{document}
+
+\begin{frontmatter}
+
+%% Title, authors and addresses
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for the associated footnote;
+%% use the fnref command within \author or \address for footnotes;
+%% use the fntext command for the associated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for the associated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \address{Address\fnref{label3}}
+%% \fntext[label3]{}
+\dochead{Predicción de la quema de calorias durante el ejercicio}
+\datesite{19 de febrero de 2023}
+%% Use \dochead if there is an article header, e.g. \dochead{Short communication}
+
+% Escriba el título del artículo.
+\title{Uso de técnicas de Machine Learning:\\
+Método Jerarquico + XGB Regressor}
+
+
+%% use optional labels to link authors explicitly to addresses:
+%% \author[label1,label2]{<author name>}
+%% \address[label1]{<address>}
+%% \address[label2]{<address>}
+
+\author[First]{AUTOR: Robledo, Nallely.\corref{cor1}}
+
+
+% Escriba el email del autor para correspondencia.
+\cortext[cor1]{Autor para correspondencia: autor1@ceautomatica.es
+\\
+Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+}
+
+\address[First]{Universidad Autonoma de Nuevo León, Facultad de Fisicomatematicas\\
+Pedro de Alba S/N, Niños Héroes, Ciudad Universitaria, San Nicolás de los Garza, N.L. }
+
+
+% Escriba el nombre de los autores y el título de su artículo en inglés para que aparezca correctamente el cuadro "Como citar:"
+\begin{comocitar}
+\begin{center}
+\begin{tcolorbox}[frame hidden, width=\linewidth*2, colframe=white, colback=black!8!white]
+\tocitearticle{Robledo, Nallely. 2023. Calorie burn prediction during exercise. Universidad Autonoma de Nuevo León, Facultad de Ciencias Fisicomatematicas 00, 1-5. }
+\end{tcolorbox}
+\end{center}
+\end{comocitar}
+
+\begin{abstract}
+%% Text of abstract
+Si la gente respondiera honestamente a la pregunta '¿Cuáles son las razones por las que haces ejercicio?', una respuesta frecuente sería quemar calorías. De hecho, según el Departamento de Salud y Servicios Humanos de EE. UU. (1992), el 26 porciento de los adultos estadounidenses entre 20 y 74 años tienen sobrepeso, lo que demuestra claramente el impacto de esta preocupación nacional.
+
+Se sabe que la reducción de la grasa corporal puede revertir varios procesos de enfermedades (p. ej., diabetes tipo II, enfermedades cardíacas, etc.), el ejercicio aumenta el gasto calórico total y también maximiza la pérdida de grasa corporal y el mantenimiento o aumento de masa muscular, la participación en el ejercicio es una estrategia muy consecuente y gratificante para perder grasa corporal y mejorar su salud.
+
+El ejercicio como medio para quemar calorías ha sido reconocido por la industria del fitness. Hay muchos tipos de modalidades de ejercicio que se comercializan con el reclamo de "quemar más calorías", y el consumidor se pregunta qué es lo que determina la cantidad de calorías quemadas durante el ejercicio. Esta situación es la razón fundamental para escribir este artículo.
+\end{abstract}
+
+% Escriba el título en inglés.
+\begin{englishtitle}
+\noindent \textbf{Calorie burn prediction during exercise -}
+\end{englishtitle}
+
+%% Escriba el resumen en inglés.
+\begin{abstractIng}
+If people were to honestly answer the question 'What are the reasons you exercise?' a frequent answer would be to burn calories. In fact, according to the US Department of Health and Human Services (1992), 26 percent of American adults ages 20-74 are overweight, clearly demonstrating the impact of this national concern.
+
+It is known that reducing body fat can reverse various disease processes (eg, type II diabetes, heart disease, etc.), exercise increases total caloric expenditure and also maximizes body fat loss and maintenance or gaining muscle mass, engaging in exercise is a very consistent and rewarding strategy for losing body fat and improving your health.
+
+Exercise as a means of burning calories has been recognized by the fitness industry. There are many types of exercise modalities that are marketed as "burning more calories" and the consumer wonders what determines the number of calories burned during exercise. This situation is the fundamental reason for writing this article.
+\end{abstractIng}
+
+\end{frontmatter}
+
+\begin{multicols}{2}   % JVS
+
+
+%%
+%% Start line numbering here if you want
+%%
+% \linenumbers
+
+%% main text
+\section{Introducción}
+La principal directriz para la creación de este articulo es representar la solución a la interrogante:
+\emph {¿Cual es el factor de mayor influencia en la quema de calorias durante el ejercicio? }\\  
+
+
+Se evaluan diferentes variables que involucran las caracteristicas fisicas de la persona que realiza el ejercicio, contra otras variables, que describen la manera de hacer el ejercicio.
+Las variables de estudio serán: Edad, Sexo, Peso, Estatura, Pulso cardiaco, Temperatura y Duración.
+
+\\
+
+{En reposo, el cuerpo gasta energía para mantener las funciones de las células que son esenciales para la vida. El bombeo continuo de sangre por parte del corazón exige energía, al igual que la ventilación continua (movimiento de aire hacia adentro y hacia afuera) de los pulmones. Además, mantener un entorno de soporte vital dentro y alrededor de las células requiere una descomposición constante de ciertas moléculas liberadoras de energía. Esta energía también se utiliza para formar las moléculas necesarias para reparar las células, almacenar energía (glucógeno y triglicéridos), combatir infecciones y procesar los nutrientes obtenidos de la digestión. Estas funciones exigentes de energía se combinan para formar la tasa metabólica basal del cuerpo, que puede variar de aproximadamente 800 a 1500 Kcal dependiendo del tamaño del cuerpo y la ingesta calórica total (cantidad ingerida de alimentos).}.
+
+\section{Marco teórico}
+
+El trifosfato de adenosina (ATP) es la molécula principal que el cuerpo utiliza como medio para utilizar la energía química para realizar el trabajo celular. El ejercicio aumenta el gasto calórico del cuerpo, ya que la contracción muscular implica la necesidad de formar y descomponer ATP repetidamente. La energía liberada por la descomposición del ATP alimenta la contracción del músculo esquelético, lo que aumenta las demandas de energía del cuerpo y aumenta el gasto calórico. Las investigaciones han demostrado que durante el ejercicio el aumento del gasto calórico se debe casi en su totalidad a la contracción del músculo esquelético; el equilibrio se debe a un aumento en las demandas de energía del corazón y los músculos utilizados durante la ventilación.
+
+
+\begin{figure}[H]
+\centering
+  % El fichero es un eps y se convierte automáticamente a pdf con eps2pdf package
+  \includegraphics[height=3cm, width=5cm]{Figuras/trifos}\\
+  \caption{Estructura química del trifosfato, Adenosintriphosphat protoniert.svg, Dominio Publico}\label{fig1}
+\end{figure}
+
+La investigación evaluará las variables en consideración para al quema de calorias y se definirá a travéz de modelos mátematicos los de mayor influencia en la quema de calorias. Al final de esta investigación se concluirá de manera lógica si estas variables estan influidas por el efecto de el ATP.
+
+Los módelos mátematicos de Machine Learning seleccionados para el análisis: Método Jerarquico y XGBBoost, estan sustentados bajo la misma teoria de clásificación; que es la de los árboles de decisión. Esto, apesar de que siguen procedimientos totalmente adversos.
+
+En general, los árboles de decisión clasifican datos a partir de su separación en regiones y obtienen una clasificación a partir de las cotas que limitan las regiones. Una vez obtenidas dichas regiones, la función de predicción.
+
+Se busca concluir el resultado de esta investigación en base al modelo que generó un mejor desempeño. Para ello se utilizará la Media de Error Aboluto o MAE; esta es una métrica que mide el promedio de la diferencia absoluta entre las predicciones y los valores reales. 
+Se puede expresar matemáticamente como:
+
+\text{MAE}(y, \hat{y}) = \frac{ \sum_{i=0}^{N - 1} |y_i - \hat{y}_i| }{N}
+
+
+\section{Machine Learning}
+Esta documento hace una recopilación de conjuntos apropiados para enseñar a nuestros modelos de aprendizaje automático para que logre saber cuál es la cantidad de calorías que el individuo gasta para quemar. 
+
+Usaremos el Método jerarquico y Linear Regression como modelos de aprendizaje automático para comparar y luego evaluar estos modelos. La herramienta es Google Colab, el cual es un servicio basado en la nube.
+
+\subsection{Selección de caracteristicas}\\
+
+\textbf{Matriz de Correlación} \\
+Primero se muestra la relación entre las variables independientes y su influencia sobre la variable dependiente que es Burned Calories. En color obscuro se marcaron aquellos más significantes para su fácil interpretación.
+
+\begin{figure}[H]
+\centering
+  % El fichero es un eps y se convierte automáticamente a pdf con eps2pdf package
+  \includegraphics[height=7cm, width=8cm]{Figuras/corr.png}\\
+  \caption{Gráfico Dendrograma}\label{fig1}
+\end{figure}
+
+\textbf{ANOVA} \\
+Esta herramienta es una fórmula estadística que sirve para comparar las varianzas entre las medias de diferentes grupos. Tambien se utiliza para determinar si existe alguna diferencia entre las medias de los diferentes grupos.\\
+
+A continuación se presentan los resultados del valor de F, ordenando de las variables que tienen un valor más alto, al menos representativo. 
+\begin{table}[H]
+  \caption{Resultados de ANOVA, F-Value por variable}
+   \label{extremos45}
+  \begin{tabular*}{\hsize}{lrrrrr}
+\hline
+Variable & F Value\\
+   \hline
+Duration & 157053.43 \\
+Heart Rate &  62387.94 \\
+Body Temp & 31855.44 \\
+Weight & 366.25  \\
+Age	 &	18.904356\\
+Gender & 7.5 \\
+Height & 4.61 \\
+\hline
+  \end{tabular*}
+\end{table}
+
+En base a esta evaluación se  interpreta que un valor F alto, indica alta relación lineal; valores menores, lo contrario. Por lo tanto asumimos que existen 3 variables con mayor relación con la variable de respuesta {\emph {Burned Calories} y estas son \emph{ \emph {Duration, Heart Rate y Body Temp.}} 
+
+Información mutua\\
+Esta mide la cantidad de información transferida cuando ${x}^{i}$= (variable de interes) es transmitido y ${y}^{i}$ =(variable de respuesta) es recibido.
+
+\begin{figure}[H]
+\centering
+  % El fichero es un eps y se convierte automáticamente a pdf con eps2pdf package
+  \includegraphics[height=7cm, width=6cm]{infomutua.png}\\
+  \caption{Gráfico de Información mutua entre variables}\label{fig1}
+\end{figure}
+
+Con el grafico anterior podemos observar que las variables Duration, Height y Heart Rate comparten información mutua reelevante, en comparacion con el resto de las variables\\
+
+En base a los análisis previos, se cree que la eliminación de las variables Age, Weight y Gender pudiera ser conveniente para el agrupamiento de caracteristicas, ya que estas variables tienen muy poca significancia y además comparten poca información mutua.
+
+\subsection{Agrupamiento de caracterisiticas y análisis de grupos}
+En esta sección se realizará el análisis de grupos o tambien conocido como clustering, es la tarea de agrupar objetos por similitud, en conjuntos de manera que los miembros del mismo grupo tengan características similares. 
+
+Es la tarea principal de la minería de datos exploratoria y es una técnica común en el análisis de datos estadísticos. Se puede realizar a travez del aprendizaje automatico No Supervisado y el Supervisado.
+
+En primer instancia es importante mencionar que para esta sección del análisis, las variables independientes ya fueron filtradas por medio de la selección de caracteristicas precedente, por lo que solo se tomarán en cuenta aquellas que aportan mayor información al modelo: Heart Rate, Duration, Body Temp y Height\\
+
+\emph {A. Método jerarquico } \\
+Los datos son escalados, debido a la diferencia de unidades entre las variables. Para esto se hace uso de la libreria sklearn.preprocessing importando StandardScaler.
+\begin{itemize}
+
+\item Definir cantidad de clústers\\
+Se realiza el gráfico de dendrograma, el cual de acuerdo a su estructura muestra los datos en subcategorías que se van dividiendo en otros hasta llegar al nivel de detalle deseado.
+\begin{figure}[H]
+\centering
+  % El fichero es un eps y se convierte automáticamente a pdf con eps2pdf package
+  \includegraphics[height=5cm, width=7cm]{dendograma.png}\\
+  \caption{Gráfico Dendrograma}\label{fig1}
+\end{figure}
+El gráfico muestra la creación de 3 subgrupos de los que se desprenden otros nuevos. Por lo que esta es la cantidad elegida de clusters.
+
+\item Visualización de clústers\\
+Para esta sección se hace uso de la libreria sklearn.cluster importando la AgglomerativeClustering.
+\begin{figure}[H]
+\centering
+  % El fichero es un eps y se convierte automáticamente a pdf con eps2pdf package
+  \includegraphics[height=4cm, width=7cm]{grupos.png}\\
+  \caption{Visualización de clústers}\label{fig1}
+\end{figure}
+\item Evaluación de características de los clústers\\
+En el punto anterior, se visualizo la unión de los clusters en el plano 2D. Posterior a esto, se evaluan las caracterisiticas reelevantes de los grupos. Esto nos servirá para entender las comunalidades de estos modelos.
+El primer paso es asignar a cada observación su respectivo cluster. Posteriormente se crea un nuevo conjunto de datos que contenga solamente la variable de interés y la etiqueta de cluster. Y por último se selecciono un diagrama de boxplot, es una herramienta muy utilizada para la evalación de la estadistica descriptiva.
+\begin{figure}[H]
+\centering
+  % El fichero es un eps y se convierte automáticamente a pdf con eps2pdf package
+  \includegraphics[height=8cm, width=8cm]{gruposj2.png}\\
+  \caption{Boxplot de grupos (Método Jerárquico) }\label{fig1}
+\end{figure}
+\begin{table}[H]
+\centering
+         \caption{Estadistica descriptiva de los clústes}
+        \label{tab:correlacion}
+    \begin{tabular}{c|cccccc}
+Cluster & Media & Desv Std \\
+\hline
+1 & 93.5123 & 0.265618  \\
+2 & 36.8728 & 1.050691  \\
+3 & 145.9825 & 0.2963 \\
+\hline
+    \end{tabular}
+\end{table}
+
+Al observar los grupos, se prueba lo visto en información mutua, la disminución de Duration hace que Burned Calories dismunuya a la par.
+
+\item Desempeño de los modelos o clústers
+
+Previamente se han generado 3 clústers, para conocer el desempeño del modelo, se pone en evaluación la siguiente pregunta: ¿Cuál es el clúster que tiene un mejor desempeño?. Para resolver esto se realiza un diseño de experimentos. 
+
+\textbf{Prueba de Hipótesis} \\
+Se prueba la siguiente inferencia, importando f\_.oneway de la libreria scipy.stats.:\\
+H0= No existe diferencia signficativa entre los grupos\\
+HA= Existe diferencia signficativa entre los grupos\\
+
+\begin{table}[H]
+\centering
+         \caption{Resultado prueba de hipotesis}
+        \label{tab:correlacion}
+    \begin{tabular}{c|cccccc}
+ Estadistico & Valor \\
+\hline
+Valor F: & 6300.20  \\
+Valor p: & 0.001  \\
+\hline
+    \end{tabular}
+\end{table}
+
+Por lo tanto con 95\%. de confianza se rechaza la hipotesis nula. Por lo que se asume una diferencia signficativa entre los grupos.\\
+
+\textbf{Media de Error Absoluto} \\
+Se hace uso de la libreria sklearn en la sección de metrics.
+
+
+\begin{table}[H]
+\centering
+         \caption{Resultado Media de Error}
+        \label{tab:correlacion}
+    \begin{tabular}{c|cccccc}
+Cluster &  MAE \\
+\hline
+1 & 47.7409  \\
+2 & 20.9387  \\
+3 & 39.8526  \\
+\hline
+    \end{tabular}
+\end{table}
+\end{itemize}
+
+\emph {B. Método RGBBoost Regression} \\
+Este es un algoritmo de aprendizaje automático supervisado que utiliza una técnica de ensamblado de árboles de decisión para mejorar la precisión de la predicción. 
+
+Se importa la libreria xgboost y train test split de la libreria sklear modelselection.
+
+Los datos son escalados nuevamente por su diferencia de unidades, utilizando las mismas herramientas que en el método jerarquico.
+
+Se crean las variables para X y Y de prueba y entrenamiento.
+En este método se utilizan los errores residuales del modelo inicial para entrenar un segundo modelo. El segundo modelo se enfoca en corregir los errores del primer modelo. Se repite el proceso para cada modelo subsiguiente, utilizando los errores residuales del modelo anterior para entrenar el siguiente modelo.
+\begin{itemize}
+\item Desempeño del modelo.\\
+Para conocer el desempeño o conocer la exactitud de predicción brindado por el modelo:\\
+
+\textbf{Media de Error Absoluto} \\
+El resultado de MAE obtenido da 0.026\\
+
+\textbf{KFold} \\
+Despues se evaluo la eficacia de un modelo, atravéz de otra métrica. En este caso utilizamos Kfold, para uso se importo de la libreria sklearn.modelselection.
+En esta técnica, se divide el conjunto de datos en k subconjuntos o  "folds" de aproximadamente el mismo tamaño. Posteriormente, el modelo se entrena k veces, cada vez utilizando k-1 subconjuntos para entrenamiento y el subconjunto restante para validación.
+El resultado de KFold obtenido da un score de 0.96.\\
+Por ultimo se grafico el comportamiento de la variable dependiente de prueba y la de predicción. La visualización se hace en un plot, la función se importo de la libreria matplotlib.pyplot.
+
+\begin{figure}[H]
+\centering
+  % El fichero es un eps y se convierte automáticamente a pdf con eps2pdf package
+  \includegraphics[height=4cm, width=6cm]{Figuras/pred2.png}\\
+  \caption{Visualización gráfica del desempeño de la predicción) }\label{fig1}
+\end{figure}
+\end{itemize}
+\section{Conclusiones}
+
+Se sabe en base a la selección de caracteristicas realizada en base al análisis descriptivo que existen 3 variables que van a influir significativamente, en comparación con las demás, en la creación de un modelo de mejor desempeño estas son: Body Temp, Duration y Heart Rate.\\
+
+Duration y Heart Rate demostraron tener una interacción con Burned Calories, durante la evaluación de grupos realizada en el análisis descriptivo en el método jerarquico, se observaba que los grupos con una media superior, tenian un incremento considerable de estas variables. Por lo que se concluye que al combinar estas variables  el ejercicio realizado resulta más efectivo. Las variable Body Temp se mostro bastante estable, pero demostro en el análisis de correlación estar muy relacionada con Heart Rate, por lo que se asume van de la mano\\
+
+Para un modelo con mejor desempeño se recomienda XGBOOST sobre el método jerárquico, ya que probo mejor resultados en MAE y KFold.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Agradecimientos}
+
+Este trabajo ha sido realizado con el apoyo de los maestros de la Facultad de Ciencias Fisicomateticas de la UANL.
+
+
+\section{Apendice}
+
+[1] Tareas en Google Colab.md GitHub. \\
+    https://github.com/nalrob/Aprendizaje-Automatico/blob\\/main/Tareas+en+Google+Colab.md
+
+
+
+\section{Referencias}
+
+[1] Información extraída de Kaggle, creada con fines educativos por Eduardo M. De Mories  \\       https://www.kaggle.com/datasets/aadhavvignesh/calories-burned-during-exercise-and-activities 
+
+[2] Vinoy Binumon Joseph, S. (2022). Calorie Burn Prediction Analysis Using XGBoost Regressor and Linear Regression Algorithms. Proceedings of the National Conference on Emerging Computer Applications, 4, 5.
+
+[3] Poellabauer, S. V. A. (15/Julio/2019). Multi-modal Biometric-based Implicit Authentication of Wearable Device Users. 1, 3.
+
+[4] Learning, M. (1994). Neural and Statistical Classification. Editors D. Mitchie et. al, 350. 
+
+[5] Mitchell, T. M. (1999). Machine learning and data mining. Communications of the ACM,42(11), 30-36. 
+
+[6] Downey, A. B. (2011). Think stats. "O'Reilly Media, Inc."
+
+\end{multicols}
+
+\end{document}
+
+%%
+%% End of file `ejemplo latex RIAI.tex'.
